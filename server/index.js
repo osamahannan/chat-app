@@ -4,7 +4,7 @@ const cors = require("cors");
 const socketIO = require("socket.io");
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 4500;
 
 const users = [{}]
 
@@ -41,5 +41,5 @@ io.on("connection", (socket) => {
 })
 
 server.listen(port, () => {
-    console.log(`working`);
+    console.log(`server is running on http://localhost:${port}`);
 })
