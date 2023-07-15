@@ -8,7 +8,8 @@ const port = process.env.PORT || 4500;
 
 const users = [{}]
 
-app.use(cors());
+app.use(cors({ origin: "*" }));
+app.options("*", cors());
 
 app.get("/", (req, res) => {
     res.send("Hell it is working");
